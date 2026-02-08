@@ -1,5 +1,5 @@
 // ===== Cognito Config =====
-const COGNITO_DOMAIN = "https://ap-south-1mwd0fdgvv.auth.ap-south-1.amazoncognito.com/login?client_id=25go7ul0prdtu9johhriei22fr&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fwww.mohinuddin.onlineconst 
+const COGNITO_DOMAIN = "https://www.mohinuddin.online
     CLIENT_ID = "25go7u10prdtuj9ohhriie22fr";
 const REDIRECT_URI = "https://main.d1kqze7yks7kh5.amplifyapp.com/dashboard.html";
 const LOGOUT_URI = "https://main.d1kqze7yks7kh5.amplifyapp.com";
