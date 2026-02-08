@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dashboard - ClearText.ai</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<button onclick="callService('message')">
+  Digital Message Explainer
+</button>
 
-  <h2>User Dashboard</h2>
+<button onclick="callService('command')">
+  Command Generator
+</button>
 
-  <button onclick="selectOption('command')">
-    Command Generator
-  </button>
-  <br><br>
+<button onclick="callService('website')">
+  Website Change Detector
+</button>
 
-  <button onclick="selectOption('website')">
-    Website Change Detector
-  </button>
-  <br><br>
+<div id="output"></div>
 
-  <button onclick="selectOption('message')">
-    Digital Message Explainer
-  </button>
-
-  <h3>Output</h3>
-  <div id="output"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script>
