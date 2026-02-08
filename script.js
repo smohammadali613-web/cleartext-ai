@@ -1,8 +1,8 @@
-const API_URL = "https://API_URL_HERE/prod/process";
+const API_URL = "https://abcd1234.lambda-url.ap-south-1.on.aws/";
 
 function callService(action) {
-  const outputDiv = document.getElementById("output");
-  outputDiv.innerText = "Processing...";
+  const output = document.getElementById("output");
+  output.innerText = "Processing...";
 
   fetch(API_URL, {
     method: "POST",
@@ -11,15 +11,15 @@ function callService(action) {
     },
     body: JSON.stringify({
       action: action,
-      input: "test input from user"
+      input: "test from website"
     })
   })
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
-      outputDiv.innerText = data.output;
+      output.innerText = data.output;
     })
-    .catch(error => {
-      outputDiv.innerText = "Error calling API";
-      console.error(error);
+    .catch(err => {
+      output.innerText = "Backend error";
+      console.error(err);
     });
 }
