@@ -1,34 +1,29 @@
-console.log("Frontend loaded");
+// ===== Cognito Config =====
+const COGNITO_DOMAIN = "https://ap-south-1mwd0fdgvv.auth.ap-south-1.amazoncognito.com";
+const CLIENT_ID = "25go7u10prdtuj9ohhriie22fr";
+const REDIRECT_URI = "https://main.d1kqze7yks7kh5.amplifyapp.com/dashboard.html";
+const LOGOUT_URI = "https://main.d1kqze7yks7kh5.amplifyapp.com";
 
-/* ===== Cognito Configuration ===== */
-const cognitoConfig = {
-  domain: "ap-south-1mwd0fdgvv.auth.ap-south-1.amazoncognito.com",
-  clientId: "25go7uI0prdtu9johhriei22fr",
-  redirectSignIn: "https://main.d1kqze7yks7kh5.amplifyapp.com/dashboard.html",
-  redirectSignOut: "https://main.d1kqze7yks7kh5.amplifyapp.com",
-  responseType: "code"
-};
-
-/* ===== Login Function ===== */
+// ===== Login Function =====
 function login() {
-  const loginUrl =
-    "https://" + cognitoConfig.domain +
-    "/login" +
-    "?client_id=" + cognitoConfig.clientId +
-    "&response_type=" + cognitoConfig.responseType +
-    "&scope=email+openid+profile" +
-    "&redirect_uri=" + encodeURIComponent(cognitoConfig.redirectSignIn);
+    const loginUrl =
+        `${COGNITO_DOMAIN}/login` +
+        `?client_id=${CLIENT_ID}` +
+        `&response_type=code` +
+        `&scope=openid+email+profile` +
+        `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
 
-  window.location.href = loginUrl;
+    window.location.href = loginUrl;
 }
 
-/* ===== Logout Function (optional) ===== */
+// ===== Logout Function =====
 function logout() {
-  const logoutUrl =
-    "https://" + cognitoConfig.domain +
-    "/logout" +
-    "?client_id=" + cognitoConfig.clientId +
-    "&logout_uri=" + encodeURIComponent(cognitoConfig.redirectSignOut);
+    const logoutUrl =
+        `${COGNITO_DOMAIN}/logout` +
+        `?client_id=${CLIENT_ID}` +
+        `&logout_uri=${encodeURIComponent(LOGOUT_URI)}`;
 
-  window.location.href = logoutUrl;
+    window.location.href = logoutUrl;
 }
+
+console.log("Frontend loaded successfully");
