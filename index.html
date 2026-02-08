@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClearText.ai</title>
+  <title>Login - ClearText.ai</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to ClearText.ai</h1>
+
+  <h2>Login</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <br><br>
+
+  <input type="password" id="password" placeholder="Password">
+  <br><br>
 
   <button onclick="login()">Login</button>
 
-  <script>
-    function login() {
-      window.location.href =
-        "https://cleartext-ai-login.auth.ap-south-1.amazoncognito.com/login" +
-        "?client_id=25go7ul0prdtu9johhriei22fr" +
-        "&response_type=code" +
-        "&scope=email+openid" +
-        "&redirect_uri=https://main.d1kqze7yks7kh5.amplifyapp.com/dashboard.html";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
