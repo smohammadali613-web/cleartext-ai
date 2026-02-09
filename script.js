@@ -13,6 +13,6 @@ async function commandGenerator() {
             data.example_commands.join("\n- ");
     } catch (error) {
         output.innerText = "Backend error!";
-        console.error(error);
+        console.error("ERROR:", error);
     }
 }
