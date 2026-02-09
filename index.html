@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mohinuddin Login</title>
+    <title>Mohinuddin Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Mohinuddin Online</h1>
+    <h1>Mohinuddin Online Dashboard</h1>
 
-    <input type="text" id="username" placeholder="Username">
-    <br><br>
-    <input type="password" id="password" placeholder="Password">
-    <br><br>
+    <button onclick="commandGenerator()">Command Generator</button>
+    <button onclick="websiteChecker()">Website Checker</button>
+    <button onclick="digitalMessage()">Digital Message</button>
 
-    <button onclick="login()">Login</button>
-
-    <p id="loginMessage"></p>
+    <pre id="output"></pre>
 
     <script src="script.js"></script>
 </body>
