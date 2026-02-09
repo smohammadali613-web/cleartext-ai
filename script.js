@@ -1,13 +1,11 @@
-const apiUrl = "https://<your-lambda-or-api-url>"; // Replace with your Lambda URL or API Gateway
+document.getElementById("loginBtn").addEventListener("click", () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-document.getElementById("fetchDataBtn").addEventListener("click", async () => {
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        document.getElementById("apiResponse").innerText = JSON.stringify(data);
-    } catch (error) {
-        console.error("Error fetching API:", error);
-        document.getElementById("apiResponse").innerText = "API call failed!";
+    // Minimal local validation (later connect to Lambda/Cognito)
+    if(username === "admin" && password === "admin123") {
+        window.location.href = "dashboard.html"; // Go to dashboard
+    } else {
+        document.getElementById("loginMessage").innerText = "Invalid username or password!";
     }
 });
-
